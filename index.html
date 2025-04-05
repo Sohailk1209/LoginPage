@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in Page</title>
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=96&id=C92yi4L31OGx&format=png" type="image/x-icon">
+    <style>
+        body{
+            margin: 0;
+            background-color: rgb(13,13,47);
+        }
+        div{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            text-align: center;
+            padding:30px;
+            background-color: rgb(10,10,40);
+            border-radius: 10px;
+            box-shadow: 0 0 30px 1px white;
+        }
+        div>form>h1{
+            color: white;
+            text-transform: capitalize;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        div>form>input{
+            background: none;
+            border: none;
+            display: block;margin-block:50px ;
+            border-bottom: 0.5px solid white;
+            width: 380px;
+            padding-bottom: 8px;
+            color: white;
+        }
+        div>form>input::placeholder{
+            font-weight: bolder;
+            font-size: larger;
+        }
+        div>form>button{
+            margin-top: -10px;
+            border-radius:20px;
+            padding:5px 20px;
+            border: none;
+            float: left;
+            background-color: rgb(69, 69, 154);
+            color: white;
+        }
+        .fill_Password{
+            position: relative;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+       <form action="">
+        <h1>Login page with some animation</h1>
+        <input type="text" placeholder="Username" id="name" >
+        <input type="password" placeholder="Password" id="password">
+        <button  onmouseover="f2()">Submit</button>
+       </form>
+    </div>
+</body>
+<script>
+    function f1(){
+        alert("Thank You!!!")
+    }
+    let s="sohail";
+    let p="sohailk1209";
+    function f2(){
+        let name1=document.getElementById("name").value;
+        let password1=(document.getElementById("password").value);
+        let button1=document.getElementsByTagName("button");
+
+        if(name1===(s)  && password1===(p)){
+            alert("Valid user id and password!!!");
+            button1[0].style.position="absolute";
+        }else{
+            button1[0].className="fill_Password";
+            let x =Math.random()*90+100;
+            let y=Math.random()*900+100;
+            button1[0].style.top=x+"px";
+            button1[0].style.left=y+"px";
+        }
+    }
+</script>
+</html>
